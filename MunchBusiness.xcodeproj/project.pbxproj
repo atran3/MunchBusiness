@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F6308B111C9A1C6D00C1B833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B101C9A1C6D00C1B833 /* AppDelegate.swift */; };
-		F6308B131C9A1C6D00C1B833 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B121C9A1C6D00C1B833 /* ViewController.swift */; };
+		F6308B131C9A1C6D00C1B833 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B121C9A1C6D00C1B833 /* LoginViewController.swift */; };
 		F6308B161C9A1C6D00C1B833 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6308B141C9A1C6D00C1B833 /* Main.storyboard */; };
 		F6308B191C9A1C6D00C1B833 /* MunchBusiness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6308B171C9A1C6D00C1B833 /* MunchBusiness.xcdatamodeld */; };
 		F6308B1B1C9A1C6D00C1B833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6308B1A1C9A1C6D00C1B833 /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		F6308B0D1C9A1C6D00C1B833 /* MunchBusiness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MunchBusiness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6308B101C9A1C6D00C1B833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F6308B121C9A1C6D00C1B833 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F6308B121C9A1C6D00C1B833 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F6308B151C9A1C6D00C1B833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6308B181C9A1C6D00C1B833 /* MunchBusiness.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MunchBusiness.xcdatamodel; sourceTree = "<group>"; };
 		F6308B1A1C9A1C6D00C1B833 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,15 +56,23 @@
 		F6308B0F1C9A1C6D00C1B833 /* MunchBusiness */ = {
 			isa = PBXGroup;
 			children = (
-				F6308B101C9A1C6D00C1B833 /* AppDelegate.swift */,
-				F6308B121C9A1C6D00C1B833 /* ViewController.swift */,
+				F6308B121C9A1C6D00C1B833 /* LoginViewController.swift */,
 				F6308B141C9A1C6D00C1B833 /* Main.storyboard */,
+				F6308B171C9A1C6D00C1B833 /* MunchBusiness.xcdatamodeld */,
+				F6308B251C9A242700C1B833 /* Supporting Files */,
+			);
+			path = MunchBusiness;
+			sourceTree = "<group>";
+		};
+		F6308B251C9A242700C1B833 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F6308B101C9A1C6D00C1B833 /* AppDelegate.swift */,
 				F6308B1A1C9A1C6D00C1B833 /* Assets.xcassets */,
 				F6308B1C1C9A1C6D00C1B833 /* LaunchScreen.storyboard */,
 				F6308B1F1C9A1C6D00C1B833 /* Info.plist */,
-				F6308B171C9A1C6D00C1B833 /* MunchBusiness.xcdatamodeld */,
 			);
-			path = MunchBusiness;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6308B131C9A1C6D00C1B833 /* ViewController.swift in Sources */,
+				F6308B131C9A1C6D00C1B833 /* LoginViewController.swift in Sources */,
 				F6308B191C9A1C6D00C1B833 /* MunchBusiness.xcdatamodeld in Sources */,
 				F6308B111C9A1C6D00C1B833 /* AppDelegate.swift in Sources */,
 			);

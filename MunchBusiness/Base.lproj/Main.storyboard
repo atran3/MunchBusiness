@@ -1,25 +1,157 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="MunchBusiness" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="hNK-Xr-nCL"/>
+                        <viewControllerLayoutGuide type="bottom" id="gKM-tU-fc7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="SYQ-Ds-57o">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="munch_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="8jB-VA-DI7">
+                                <rect key="frame" x="205" y="120" width="190" height="50"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cC-kq-p8r">
+                                <rect key="frame" x="250" y="418" width="100" height="33"/>
+                                <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="FBg-NN-OTl"/>
+                                    <constraint firstAttribute="width" constant="100" id="Yqb-CC-6qy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="-2" maxY="0.0"/>
+                                <state key="normal" title=" Login "/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0us-8j-hij">
+                                <rect key="frame" x="236.5" y="461" width="127" height="29"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Italic" family="Avenir Next" pointSize="12"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Don't have an account?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sS-To-ozf">
+                                <rect key="frame" x="200" y="231.5" width="200" height="137"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oHl-ss-Uzp">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="137"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NRP-fm-r0h">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="8FB-P0-J2Z"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="nXH-Mp-rbQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="nXH-Mp-rbQ"/>
+                                                    </mask>
+                                                </variation>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t2J-P5-qeL">
+                                                <rect key="frame" x="0.0" y="34" width="200" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="rqh-aA-cSS"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BuH-Kv-5Og">
+                                                <rect key="frame" x="0.0" y="68" width="200" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="c5b-xi-C5Z"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Re-type Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pn6-N4-q6Y">
+                                                <rect key="frame" x="0.0" y="102" width="200" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="BQe-ci-mpf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="n8t-pz-4tk"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="n8t-pz-4tk"/>
+                                            </mask>
+                                        </variation>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="oHl-ss-Uzp" firstAttribute="top" secondItem="2sS-To-ozf" secondAttribute="top" id="MTz-7U-gYF"/>
+                                    <constraint firstAttribute="bottom" secondItem="oHl-ss-Uzp" secondAttribute="bottom" id="dCL-fd-6dD"/>
+                                    <constraint firstItem="oHl-ss-Uzp" firstAttribute="leading" secondItem="2sS-To-ozf" secondAttribute="leading" id="eNH-tb-9Cb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="ebU-T5-1J2"/>
+                                    <constraint firstAttribute="trailing" secondItem="oHl-ss-Uzp" secondAttribute="trailing" id="gR0-fT-bVm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25098039220000001" green="0.72941176470000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0us-8j-hij" firstAttribute="top" secondItem="0cC-kq-p8r" secondAttribute="bottom" constant="10" id="0LW-so-4RU"/>
+                            <constraint firstItem="8jB-VA-DI7" firstAttribute="centerX" secondItem="SYQ-Ds-57o" secondAttribute="centerX" id="6KQ-eX-eGg"/>
+                            <constraint firstItem="0cC-kq-p8r" firstAttribute="top" secondItem="2sS-To-ozf" secondAttribute="bottom" constant="100" id="Foc-RB-o5D"/>
+                            <constraint firstItem="gKM-tU-fc7" firstAttribute="top" secondItem="0cC-kq-p8r" secondAttribute="bottom" constant="149" id="NuX-sb-C4a"/>
+                            <constraint firstItem="0cC-kq-p8r" firstAttribute="centerX" secondItem="SYQ-Ds-57o" secondAttribute="centerX" id="RWc-JG-Rxn"/>
+                            <constraint firstItem="0us-8j-hij" firstAttribute="centerX" secondItem="SYQ-Ds-57o" secondAttribute="centerX" id="XeI-LL-I9s"/>
+                            <constraint firstItem="8jB-VA-DI7" firstAttribute="top" secondItem="hNK-Xr-nCL" secondAttribute="bottom" constant="100" id="bGX-3E-ZH5"/>
+                            <constraint firstItem="2sS-To-ozf" firstAttribute="centerY" secondItem="SYQ-Ds-57o" secondAttribute="centerY" id="iCB-SR-XPJ"/>
+                            <constraint firstItem="0us-8j-hij" firstAttribute="top" secondItem="0cC-kq-p8r" secondAttribute="bottom" constant="10" id="mfa-O4-R5r"/>
+                            <constraint firstItem="2sS-To-ozf" firstAttribute="top" secondItem="8jB-VA-DI7" secondAttribute="bottom" constant="100" id="sGH-hG-0Bk"/>
+                            <constraint firstItem="2sS-To-ozf" firstAttribute="centerX" secondItem="SYQ-Ds-57o" secondAttribute="centerX" id="zVS-VL-YlW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="sGH-hG-0Bk"/>
+                                <exclude reference="Foc-RB-o5D"/>
+                                <exclude reference="mfa-O4-R5r"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="405" y="347"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="4Hs-yq-iva">
+            <objects>
+                <viewController id="EZ6-Pw-AcN" customClass="LoginViewController" customModule="MunchBusiness" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jnr-Yo-SM6"/>
+                        <viewControllerLayoutGuide type="bottom" id="doP-SD-MMO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dLZ-5b-efM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ILu-6x-lQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="405" y="1000"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="munch_logo_white" width="190" height="50"/>
+    </resources>
 </document>
