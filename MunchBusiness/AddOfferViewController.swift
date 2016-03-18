@@ -10,12 +10,19 @@ import UIKit
 
 class AddOfferViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UITextField!
+    @IBOutlet weak var repetitionLabel: UITextField!
+    @IBOutlet weak var retailLabel: UITextField!
+    @IBOutlet weak var expiresLabel: UITextField!
+    @IBOutlet weak var createButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the vi
         self.navigationController?.navigationBar.topItem?.titleView = nil
         self.navigationItem.title = "New Offer"
+        createButton.layer.cornerRadius = 5
     }
     
 

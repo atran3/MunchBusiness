@@ -24,6 +24,12 @@
 		F6308B391C9B60BB00C1B833 /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B381C9B60BB00C1B833 /* DashboardTableViewController.swift */; };
 		F6308B3B1C9B6DEB00C1B833 /* OffersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B3A1C9B6DEB00C1B833 /* OffersTableViewController.swift */; };
 		F6308B3D1C9B8BE100C1B833 /* AddOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B3C1C9B8BE100C1B833 /* AddOfferViewController.swift */; };
+		F6308B421C9BA13500C1B833 /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B3E1C9BA13500C1B833 /* Restaurant+CoreDataProperties.swift */; };
+		F6308B431C9BA13500C1B833 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B3F1C9BA13500C1B833 /* Restaurant.swift */; };
+		F6308B441C9BA13500C1B833 /* Promotion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B401C9BA13500C1B833 /* Promotion+CoreDataProperties.swift */; };
+		F6308B451C9BA13500C1B833 /* Promotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B411C9BA13500C1B833 /* Promotion.swift */; };
+		F6308B481C9BB10B00C1B833 /* PromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B471C9BB10B00C1B833 /* PromotionTableViewCell.swift */; };
+		F6FDED641C9BFF9B0085B824 /* LinedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FDED631C9BFF9B0085B824 /* LinedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +56,12 @@
 		F6308B381C9B60BB00C1B833 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
 		F6308B3A1C9B6DEB00C1B833 /* OffersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersTableViewController.swift; sourceTree = "<group>"; };
 		F6308B3C1C9B8BE100C1B833 /* AddOfferViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOfferViewController.swift; sourceTree = "<group>"; };
+		F6308B3E1C9BA13500C1B833 /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F6308B3F1C9BA13500C1B833 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		F6308B401C9BA13500C1B833 /* Promotion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promotion+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F6308B411C9BA13500C1B833 /* Promotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
+		F6308B471C9BB10B00C1B833 /* PromotionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCell.swift; sourceTree = "<group>"; };
+		F6FDED631C9BFF9B0085B824 /* LinedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +115,7 @@
 		F6308B0F1C9A1C6D00C1B833 /* MunchBusiness */ = {
 			isa = PBXGroup;
 			children = (
+				F6308B461C9BA13B00C1B833 /* CoreData */,
 				F6308B121C9A1C6D00C1B833 /* LoginViewController.swift */,
 				F6308B301C9A34F000C1B833 /* MainTabBarController.swift */,
 				F6308B341C9B335700C1B833 /* MainNavigationController.swift */,
@@ -110,6 +123,8 @@
 				F6308B3C1C9B8BE100C1B833 /* AddOfferViewController.swift */,
 				F6308B2B1C9A2F3400C1B833 /* KeychainWrapper.h */,
 				F6308B3A1C9B6DEB00C1B833 /* OffersTableViewController.swift */,
+				F6308B471C9BB10B00C1B833 /* PromotionTableViewCell.swift */,
+				F6FDED631C9BFF9B0085B824 /* LinedView.swift */,
 				F6308B2C1C9A2F3400C1B833 /* KeychainWrapper.m */,
 				F6308B2E1C9A2F4F00C1B833 /* HttpService.swift */,
 				F6308B261C9A2AA400C1B833 /* Util.swift */,
@@ -131,6 +146,17 @@
 				F6308B1F1C9A1C6D00C1B833 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F6308B461C9BA13B00C1B833 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F6308B3E1C9BA13500C1B833 /* Restaurant+CoreDataProperties.swift */,
+				F6308B3F1C9BA13500C1B833 /* Restaurant.swift */,
+				F6308B401C9BA13500C1B833 /* Promotion+CoreDataProperties.swift */,
+				F6308B411C9BA13500C1B833 /* Promotion.swift */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +283,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6308B391C9B60BB00C1B833 /* DashboardTableViewController.swift in Sources */,
+				F6308B451C9BA13500C1B833 /* Promotion.swift in Sources */,
 				F6308B371C9B345200C1B833 /* MoreTableViewController.swift in Sources */,
+				F6FDED641C9BFF9B0085B824 /* LinedView.swift in Sources */,
 				F6308B131C9A1C6D00C1B833 /* LoginViewController.swift in Sources */,
 				F6308B191C9A1C6D00C1B833 /* MunchBusiness.xcdatamodeld in Sources */,
 				F6308B3B1C9B6DEB00C1B833 /* OffersTableViewController.swift in Sources */,
@@ -265,7 +293,11 @@
 				F6308B351C9B335700C1B833 /* MainNavigationController.swift in Sources */,
 				F6308B111C9A1C6D00C1B833 /* AppDelegate.swift in Sources */,
 				F6308B311C9A34F000C1B833 /* MainTabBarController.swift in Sources */,
+				F6308B421C9BA13500C1B833 /* Restaurant+CoreDataProperties.swift in Sources */,
+				F6308B431C9BA13500C1B833 /* Restaurant.swift in Sources */,
 				F6308B271C9A2AA400C1B833 /* Util.swift in Sources */,
+				F6308B441C9BA13500C1B833 /* Promotion+CoreDataProperties.swift in Sources */,
+				F6308B481C9BB10B00C1B833 /* PromotionTableViewCell.swift in Sources */,
 				F6308B2D1C9A2F3400C1B833 /* KeychainWrapper.m in Sources */,
 				F6308B2F1C9A2F4F00C1B833 /* HttpService.swift in Sources */,
 			);

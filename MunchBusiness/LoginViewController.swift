@@ -189,6 +189,7 @@ class LoginViewController: UIViewController {
                 let access_token = tokenResponse!["access_token"].string!
                 //only storing access token
                 NSUserDefaults.standardUserDefaults().setValue(email, forKey: "email")
+                NSUserDefaults.standardUserDefaults().setValue(authResponse!["id"].int!, forKey: "restaurantId")
                 self.Keychain.mySetObject(access_token, forKey: kSecValueData)
                 self.Keychain.writeToKeychain()
                 return (true, nil)

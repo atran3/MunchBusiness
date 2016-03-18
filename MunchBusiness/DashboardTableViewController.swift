@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+import SwiftyJSON
 
 class DashboardTableViewController: UITableViewController {
 
@@ -15,7 +17,10 @@ class DashboardTableViewController: UITableViewController {
     private var currPhone = ""
     private var currHours = ""
     
-
+    private let restaurant_id = NSUserDefaults.standardUserDefaults().integerForKey("restaurantId")
+    
+    private var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
+    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var phoneField: UITextField!
@@ -40,6 +45,12 @@ class DashboardTableViewController: UITableViewController {
         hoursField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        fetchInfo()
+    }
+    
     func textFieldDidChange(textField: UITextField) {
         let changed = nameField.text! != currName || addressField.text! != currAddress ||
             phoneField.text! != currPhone || hoursField.text! != currHours
@@ -47,12 +58,14 @@ class DashboardTableViewController: UITableViewController {
     }
     
     @IBAction func discardChanges(sender: AnyObject) {
+        toggleButtons(false)
+    }
+    
+    private func fillFields() {
         nameField.text = currName
         addressField.text = currAddress
         phoneField.text = currPhone
         hoursField.text = currHours
-        
-        toggleButtons(false)
     }
     
     @IBAction func saveChanges(sender: AnyObject) {
@@ -61,7 +74,34 @@ class DashboardTableViewController: UITableViewController {
         currPhone = phoneField.text!
         currHours = hoursField.text!
         
+        Restaurant.createRestaurant(inManagedObjectContext: self.managedObjectContext!, hours: currHours, phone_number: currPhone, name: currName, address: currAddress, latitude: 0, longitude: 0, distance: 0, id: restaurant_id)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            let data = ["address": self.currAddress, "hours": self.currHours, "name": self.currName, "phone_number": self.currPhone]
+            HttpService.doRequest("/api/restaurant/" + String(self.restaurant_id) + "/", method: "PUT", data: data, flag: true, synchronous: true)
+        }
         toggleButtons(false)
+    }
+    
+    private func processResponse(response: JSON) {
+        currName = response["name"].string!
+        currAddress = response["address"].string!
+        currPhone = response["phone_number"].string!
+        currHours = response["hours"].string!
+        
+        fillFields()
+        
+        Restaurant.createRestaurant(inManagedObjectContext: self.managedObjectContext!, hours: currHours, phone_number: currPhone, name: currName, address: currAddress, latitude: 0, longitude: 0, distance: 0, id: restaurant_id)
+    }
+    
+    private func fetchInfo() {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            let (listResponse, listStatus) = HttpService.doRequest("/api/restaurant/" + String(self.restaurant_id) + "/", method: "GET", data: nil, flag: true, synchronous: true)
+            dispatch_async(dispatch_get_main_queue()) {
+                if listStatus {
+                    self.processResponse(listResponse!)
+                }
+            }
+        }
     }
     
     private func toggleButtons(enable: Bool) {

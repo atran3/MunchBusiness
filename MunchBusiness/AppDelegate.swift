@@ -51,6 +51,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         return urls[urls.count-1]
     }()
+    
+    class var managedObjectContext: NSManagedObjectContext? {
+        return ((UIApplication.sharedApplication().delegate) as? AppDelegate)?.managedObjectContext
+    }
 
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
