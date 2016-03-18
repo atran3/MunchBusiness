@@ -14,16 +14,20 @@ class LoginViewController: UIViewController {
     private var loginMode = true
     private var prevHeight: CGFloat = 0.0
     
-    @IBOutlet weak var submitButton: UIButton!
-    @IBOutlet weak var toggleButton: UIButton!
+    
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var passwordField2: UITextField!
     @IBOutlet weak var textView: UIView!
+    @IBOutlet weak var errorView: UITextView!
     
     @IBOutlet weak var nameHeight: NSLayoutConstraint!
     @IBOutlet weak var passwordHeight2: NSLayoutConstraint!
+    
+    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var toggleButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,14 +37,13 @@ class LoginViewController: UIViewController {
             field.leftView = padding
             field.leftViewMode = .Always
         }
-        for field in [nameField, passwordField] {
-            field.borderStyle = .None
-            field.layer.borderColor = Util.Colors.LightGray.CGColor
-            field.layer.borderWidth = 1
-        }
-        for field in [emailField, passwordField2] {
-            field.borderStyle = .None
-        }
+        
+        setupFields()
+        
+        errorView.layer.cornerRadius = 5
+        errorView.layer.masksToBounds = true
+        errorView.layer.borderColor = Util.Colors.ErrorRed.CGColor
+        errorView.layer.borderWidth = 1
         
         
         textView.layer.cornerRadius = 5
@@ -54,17 +57,45 @@ class LoginViewController: UIViewController {
         if loginMode && NSUserDefaults.standardUserDefaults().boolForKey("rememberMe") {
             emailField.text = NSUserDefaults.standardUserDefaults().stringForKey("email")
         }
+        
+        self.navigationController?.navigationBarHidden = true
+
+        if NSUserDefaults.standardUserDefaults().boolForKey("stayLoggedIn") {
+            //transition to home view
+            navigateToHome();
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
-        //if NSUserDefaults.standardUserDefaults().boolForKey("stayLoggedIn")
-        //transition to home view
         super.viewWillAppear(animated)
+        
+        clearFields()
+        
+        if loginMode && NSUserDefaults.standardUserDefaults().boolForKey("rememberMe") {
+            emailField.text = NSUserDefaults.standardUserDefaults().stringForKey("email")
+        }
+        
+        errorView.hidden = true
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func navigateToHome() {
+        performSegueWithIdentifier("GoToHome", sender: self)
+    }
+    
+    private func setupFields() {
+        for field in [nameField, passwordField] {
+            field.borderStyle = .None
+            field.layer.borderColor = Util.Colors.LightGray.CGColor
+            field.layer.borderWidth = 1
+        }
+        for field in [emailField, passwordField2] {
+            field.borderStyle = .None
+        }
     }
     
     private let Keychain = KeychainWrapper()
@@ -113,17 +144,35 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func toggleMode(sender: AnyObject) {
+        switchMode()
+    }
+    
+    private func switchMode() {
         loginMode = !loginMode
         setupForMode()
         clearFields()
+        errorView.hidden = true
     }
-    
+
     @IBAction func submit(sender: AnyObject) {
         if loginMode {
             login()
         } else {
             register()
         }
+    }
+    
+    private func presentError(errorString: String) {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.05
+        animation.repeatCount = 2
+        animation.autoreverses = true
+        animation.fromValue = NSValue(CGPoint: CGPointMake(textView.center.x - 5, textView.center.y))
+        animation.toValue = NSValue(CGPoint: CGPointMake(textView.center.x + 5, textView.center.y))
+        textView.layer.addAnimation(animation, forKey: "position")
+        
+        errorView.text = errorString
+        errorView.hidden = false
     }
     
     //TODO: check refresh token and dont always issue reauthorization request
@@ -139,6 +188,7 @@ class LoginViewController: UIViewController {
             if tokenStatus {
                 let access_token = tokenResponse!["access_token"].string!
                 //only storing access token
+                NSUserDefaults.standardUserDefaults().setValue(email, forKey: "email")
                 self.Keychain.mySetObject(access_token, forKey: kSecValueData)
                 self.Keychain.writeToKeychain()
                 return (true, nil)
@@ -161,9 +211,11 @@ class LoginViewController: UIViewController {
                 if result {
                     print("log in success!")
                     //transition to home view
+                    self.navigateToHome()
                 } else {
                     //alert of some kind
                     print("log in failed! \(error)")
+                    self.presentError(error ?? "Error!")
                 }
             }
         }
@@ -172,21 +224,38 @@ class LoginViewController: UIViewController {
     private func register() {
         let email = (emailField?.text)!
         let password = (passwordField?.text)!
+        let password2 = (passwordField2?.text)!
         let name = (nameField?.text)!
-        let data = ["email": email, "password": password, "name": name, "is_customer": "t"]
+        let data = ["email": email, "password": password, "name": name, "is_restaurant": "t"]
+        
+        // Check for errors
+        if (email.characters.count == 0) {
+            presentError("E-mail is required!")
+            return
+        } else if (password.characters.count == 0){
+            presentError("Password is required!")
+            return
+        } else if (password != password2) {
+            presentError("Passwords do not match!")
+            return
+        }
+        
         //Start spinner
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
             let (registerResponse, registerStatus) = HttpService.doRequest("/api/user/", method: "POST", data: data, flag: false, synchronous: true)
             if registerStatus {
-                NSUserDefaults.standardUserDefaults().setValue(email, forKey: "email")
                 let (result, error) = self.authenticate(email, password: password)
                 dispatch_async(dispatch_get_main_queue()) {
                     //End spinner
                     if result {
                         print("registration success!")
                         //transition to next view
+                        // switch to login mode for when they come back out
+                        self.switchMode()
+                        self.navigateToHome()
                     } else {
                         print("authentication failed! \(error)")
+                        self.presentError(error ?? "Error!")
                     }
                 }
             } else {
@@ -194,6 +263,7 @@ class LoginViewController: UIViewController {
                     ///End spinner
                     //alert of some kind -- because invalid email address or duplicate email address
                     print("registering account failed. \(registerResponse)")
+                    self.presentError("Invalid e-mail address!")
                 }
             }
         }

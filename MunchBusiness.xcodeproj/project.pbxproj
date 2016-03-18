@@ -7,15 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E3E9AE16621C4253EAC50A4F /* Pods_MunchBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094980ABB016E044B3BF0779 /* Pods_MunchBusiness.framework */; };
 		F6308B111C9A1C6D00C1B833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B101C9A1C6D00C1B833 /* AppDelegate.swift */; };
 		F6308B131C9A1C6D00C1B833 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B121C9A1C6D00C1B833 /* LoginViewController.swift */; };
 		F6308B161C9A1C6D00C1B833 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6308B141C9A1C6D00C1B833 /* Main.storyboard */; };
 		F6308B191C9A1C6D00C1B833 /* MunchBusiness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6308B171C9A1C6D00C1B833 /* MunchBusiness.xcdatamodeld */; };
 		F6308B1B1C9A1C6D00C1B833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6308B1A1C9A1C6D00C1B833 /* Assets.xcassets */; };
 		F6308B1E1C9A1C6D00C1B833 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6308B1C1C9A1C6D00C1B833 /* LaunchScreen.storyboard */; };
+		F6308B271C9A2AA400C1B833 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B261C9A2AA400C1B833 /* Util.swift */; };
+		F6308B291C9A2CB100C1B833 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F6308B281C9A2CB100C1B833 /* Podfile */; };
+		F6308B2D1C9A2F3400C1B833 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = F6308B2C1C9A2F3400C1B833 /* KeychainWrapper.m */; };
+		F6308B2F1C9A2F4F00C1B833 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B2E1C9A2F4F00C1B833 /* HttpService.swift */; };
+		F6308B311C9A34F000C1B833 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B301C9A34F000C1B833 /* MainTabBarController.swift */; };
+		F6308B351C9B335700C1B833 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B341C9B335700C1B833 /* MainNavigationController.swift */; };
+		F6308B371C9B345200C1B833 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B361C9B345200C1B833 /* MoreTableViewController.swift */; };
+		F6308B391C9B60BB00C1B833 /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B381C9B60BB00C1B833 /* DashboardTableViewController.swift */; };
+		F6308B3B1C9B6DEB00C1B833 /* OffersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B3A1C9B6DEB00C1B833 /* OffersTableViewController.swift */; };
+		F6308B3D1C9B8BE100C1B833 /* AddOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6308B3C1C9B8BE100C1B833 /* AddOfferViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		017B2A98D4B6D55026604B19 /* Pods-MunchBusiness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchBusiness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MunchBusiness/Pods-MunchBusiness.debug.xcconfig"; sourceTree = "<group>"; };
+		094980ABB016E044B3BF0779 /* Pods_MunchBusiness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MunchBusiness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B73C7C3F6E156F902F30B57D /* Pods-MunchBusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchBusiness.release.xcconfig"; path = "Pods/Target Support Files/Pods-MunchBusiness/Pods-MunchBusiness.release.xcconfig"; sourceTree = "<group>"; };
 		F6308B0D1C9A1C6D00C1B833 /* MunchBusiness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MunchBusiness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6308B101C9A1C6D00C1B833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6308B121C9A1C6D00C1B833 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +38,18 @@
 		F6308B1A1C9A1C6D00C1B833 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6308B1D1C9A1C6D00C1B833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6308B1F1C9A1C6D00C1B833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6308B261C9A2AA400C1B833 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		F6308B281C9A2CB100C1B833 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F6308B2A1C9A2F3300C1B833 /* MunchBusiness-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MunchBusiness-Bridging-Header.h"; sourceTree = "<group>"; };
+		F6308B2B1C9A2F3400C1B833 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		F6308B2C1C9A2F3400C1B833 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		F6308B2E1C9A2F4F00C1B833 /* HttpService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
+		F6308B301C9A34F000C1B833 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		F6308B341C9B335700C1B833 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		F6308B361C9B345200C1B833 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
+		F6308B381C9B60BB00C1B833 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
+		F6308B3A1C9B6DEB00C1B833 /* OffersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersTableViewController.swift; sourceTree = "<group>"; };
+		F6308B3C1C9B8BE100C1B833 /* AddOfferViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOfferViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +57,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3E9AE16621C4253EAC50A4F /* Pods_MunchBusiness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5586B9C4C621CB9AC9B5CBFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				094980ABB016E044B3BF0779 /* Pods_MunchBusiness.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D11052495BAF166388BFADC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				017B2A98D4B6D55026604B19 /* Pods-MunchBusiness.debug.xcconfig */,
+				B73C7C3F6E156F902F30B57D /* Pods-MunchBusiness.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F6308B041C9A1C6D00C1B833 = {
 			isa = PBXGroup;
 			children = (
 				F6308B0F1C9A1C6D00C1B833 /* MunchBusiness */,
 				F6308B0E1C9A1C6D00C1B833 /* Products */,
+				F6308B281C9A2CB100C1B833 /* Podfile */,
+				8D11052495BAF166388BFADC /* Pods */,
+				5586B9C4C621CB9AC9B5CBFB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +104,20 @@
 			isa = PBXGroup;
 			children = (
 				F6308B121C9A1C6D00C1B833 /* LoginViewController.swift */,
+				F6308B301C9A34F000C1B833 /* MainTabBarController.swift */,
+				F6308B341C9B335700C1B833 /* MainNavigationController.swift */,
+				F6308B361C9B345200C1B833 /* MoreTableViewController.swift */,
+				F6308B3C1C9B8BE100C1B833 /* AddOfferViewController.swift */,
+				F6308B2B1C9A2F3400C1B833 /* KeychainWrapper.h */,
+				F6308B3A1C9B6DEB00C1B833 /* OffersTableViewController.swift */,
+				F6308B2C1C9A2F3400C1B833 /* KeychainWrapper.m */,
+				F6308B2E1C9A2F4F00C1B833 /* HttpService.swift */,
+				F6308B261C9A2AA400C1B833 /* Util.swift */,
+				F6308B381C9B60BB00C1B833 /* DashboardTableViewController.swift */,
 				F6308B141C9A1C6D00C1B833 /* Main.storyboard */,
 				F6308B171C9A1C6D00C1B833 /* MunchBusiness.xcdatamodeld */,
 				F6308B251C9A242700C1B833 /* Supporting Files */,
+				F6308B2A1C9A2F3300C1B833 /* MunchBusiness-Bridging-Header.h */,
 			);
 			path = MunchBusiness;
 			sourceTree = "<group>";
@@ -82,9 +140,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6308B221C9A1C6D00C1B833 /* Build configuration list for PBXNativeTarget "MunchBusiness" */;
 			buildPhases = (
+				D20866E625B2CC1AB6EA5813 /* Check Pods Manifest.lock */,
 				F6308B091C9A1C6D00C1B833 /* Sources */,
 				F6308B0A1C9A1C6D00C1B833 /* Frameworks */,
 				F6308B0B1C9A1C6D00C1B833 /* Resources */,
+				A5FB10D2CDDE565658EB12F4 /* Embed Pods Frameworks */,
+				FBAFC742B96F8F4878A674B7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,20 +196,78 @@
 			files = (
 				F6308B1E1C9A1C6D00C1B833 /* LaunchScreen.storyboard in Resources */,
 				F6308B1B1C9A1C6D00C1B833 /* Assets.xcassets in Resources */,
+				F6308B291C9A2CB100C1B833 /* Podfile in Resources */,
 				F6308B161C9A1C6D00C1B833 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A5FB10D2CDDE565658EB12F4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MunchBusiness/Pods-MunchBusiness-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D20866E625B2CC1AB6EA5813 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FBAFC742B96F8F4878A674B7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MunchBusiness/Pods-MunchBusiness-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F6308B091C9A1C6D00C1B833 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6308B391C9B60BB00C1B833 /* DashboardTableViewController.swift in Sources */,
+				F6308B371C9B345200C1B833 /* MoreTableViewController.swift in Sources */,
 				F6308B131C9A1C6D00C1B833 /* LoginViewController.swift in Sources */,
 				F6308B191C9A1C6D00C1B833 /* MunchBusiness.xcdatamodeld in Sources */,
+				F6308B3B1C9B6DEB00C1B833 /* OffersTableViewController.swift in Sources */,
+				F6308B3D1C9B8BE100C1B833 /* AddOfferViewController.swift in Sources */,
+				F6308B351C9B335700C1B833 /* MainNavigationController.swift in Sources */,
 				F6308B111C9A1C6D00C1B833 /* AppDelegate.swift in Sources */,
+				F6308B311C9A34F000C1B833 /* MainTabBarController.swift in Sources */,
+				F6308B271C9A2AA400C1B833 /* Util.swift in Sources */,
+				F6308B2D1C9A2F3400C1B833 /* KeychainWrapper.m in Sources */,
+				F6308B2F1C9A2F4F00C1B833 /* HttpService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,23 +378,30 @@
 		};
 		F6308B231C9A1C6D00C1B833 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 017B2A98D4B6D55026604B19 /* Pods-MunchBusiness.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MunchBusiness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alextran.MunchBusiness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MunchBusiness/MunchBusiness-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		F6308B241C9A1C6D00C1B833 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B73C7C3F6E156F902F30B57D /* Pods-MunchBusiness.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MunchBusiness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alextran.MunchBusiness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MunchBusiness/MunchBusiness-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -298,6 +424,7 @@
 				F6308B241C9A1C6D00C1B833 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
